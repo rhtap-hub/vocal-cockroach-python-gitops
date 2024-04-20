@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: vocal-cockroach-python-gitops
+  description: This is GitOps manifest for vocal-cockroach-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: vocal-cockroach-python
+    janus-idp.io/tekton: vocal-cockroach-python 
+    backstage.io/kubernetes-id: vocal-cockroach-python 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:vocal-cockroach-python
